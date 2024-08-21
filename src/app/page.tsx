@@ -4,7 +4,7 @@ import React, {useRef} from 'react';
 import {Canvas, useFrame} from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import { Suspense } from 'react';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three-stdlib'
 import { useLoader } from '@react-three/fiber';
 
 function HeartModel() {
