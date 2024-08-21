@@ -19,7 +19,7 @@ function HeartModel() {
             heartRef.current.scale.set(scale, scale, scale);
         }
     });
-  return <primitive ref={heartRef} object={gltf.scene} scale={1.4} />;
+  return <primitive ref={heartRef} object={gltf.scene} scale={1.3} />;
 }
 
 export default function HeartScene() {
