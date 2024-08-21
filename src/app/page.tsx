@@ -6,10 +6,11 @@ import { OrbitControls, Environment } from '@react-three/drei';
 import { Suspense } from 'react';
 import { GLTFLoader } from 'three-stdlib'
 import { useLoader } from '@react-three/fiber';
+import * as THREE from 'three';
 
 function HeartModel() {
   const gltf = useLoader(GLTFLoader, 'heart.gltf'); // Replace with your model's path
-    const heartRef = useRef();
+    const heartRef = useRef<THREE.Group>();
 
     useFrame((state, delta) => {
         // Animate the scale to simulate beating
