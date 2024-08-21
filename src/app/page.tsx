@@ -14,8 +14,10 @@ function HeartModel() {
 
     useFrame((state, delta) => {
         // Animate the scale to simulate beating
+
         const scale = 1 + Math.sin(state.clock.getElapsedTime() * 5) * 0.1; // Adjust speed (5) and intensity (0.1)
         if (heartRef.current !== undefined) {
+            heartRef.current.rotation.y += 0.01;
             heartRef.current.scale.set(scale, scale, scale);
         }
     });
