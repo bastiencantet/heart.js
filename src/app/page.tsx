@@ -14,10 +14,10 @@ export function Loading() {
 
 export function ContactLink() {
     return (
-        <div style={{position: 'absolute', width: '100%', height: '100%',top:0,display:"flex",flexDirection:"column", justifyContent:'end', alignItems:"center"}}>
+        <div style={{position: 'absolute',bottom: 0, left: "50%",display:"flex", transform: 'translate(-50%, 0)'
+            ,flexDirection:"column", justifyContent:'end', alignItems:"center"}}>
             <h1 style={{color: 'black', fontSize: '1.5em'}}>Made with ❤️ by Bastien CANTET</h1>
             <Link href="" style={{
-                //button like style
                 padding: '10px 20px',
                 backgroundColor: 'black',
                 color: 'white',
@@ -33,9 +33,11 @@ export function ContactLink() {
 
 export default function HeartScene() {
     return (
+        <>
             <Suspense fallback={<Loading/>}>
                 <SceneComponents/>
-                <ContactLink/>
             </Suspense>
+            <ContactLink/>
+        </>
     );
 }
