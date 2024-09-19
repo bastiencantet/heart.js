@@ -23,7 +23,7 @@ function HeartModel() {
     return <primitive ref={heartRef} object={gltf.scene} scale={1.3} />;
 }
 
-export function SceneComponents() {
+export default function SceneComponents() {
     return (
         <>
             <Canvas style={{height: '100vh', width: '100vw'}}>

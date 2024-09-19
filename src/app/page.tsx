@@ -1,8 +1,6 @@
 import React, {Suspense} from "react";
-import {SceneComponents} from "@/app/components/client/HeartScene";
 import {ContactLink} from "@/app/components/ContactLink";
-
-
+import SceneComponents from "@/app/components/client/HeartScene";
 
 
 export default function HeartScene() {
