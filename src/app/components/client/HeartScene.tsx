@@ -32,7 +32,6 @@ export default function SceneComponents() {
                 <pointLight position={[-10, -10, -10]} intensity={3} color="green"/>
                 <HeartModel/>
                 <TrackballControls
-                    noPan
                     dynamicDampingFactor={0.04}
                 />
                 <Environment preset="sunset"/>
