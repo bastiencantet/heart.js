@@ -8,7 +8,7 @@ import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 
 function HeartModel() {
-    const gltf = useLoader(GLTFLoader, 'heart.gltf'); // Replace with your model's path
+    const gltf = useLoader(GLTFLoader, 'heart.gltf');
     const heartRef = useRef<THREE.Group>();
 
     useFrame((state, delta) => {
