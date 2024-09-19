@@ -7,9 +7,10 @@ export function ContactLink() {
             flexDirection: "column", justifyContent: 'end', alignItems: "center"
         }}>
             <div className={"card w-screen sm:w-auto"}>
-                <h1 style={{color: 'lightgrey', fontSize: '1.5em', opacity: '1'}}>Made with ❤️ by Bastien CANTET</h1>
-                <Link prefetch={false} href="https://github.com/bastiencantet" style={{
-                    color: 'lightgrey', fontSize: '1em', opacity: '0.8', textDecoration: 'underline',
+                <h1
+                    className={"sm:text-2xl opacity-90"} style={{color: "lightgrey"}}>Made with ❤️ by Bastien CANTET</h1>
+                <Link className={"text-xs sm:text-base"} href={"https://github.com/bastiencantet"} style={{
+                    color: 'lightgrey', opacity: '0.8', textDecoration: 'underline',
                 }}>View my Github</Link>
             </div>
         </div>
