@@ -1,39 +1,41 @@
-"use client"
+import React, {Suspense} from "react";
+import {SceneComponents} from "@/app/components/client/HeartScene";
+import Link from "next/link";
+import {center} from "maath/buffer";
 
-import React, {useRef} from 'react';
-import {Canvas, useFrame} from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
-import { Suspense } from 'react';
-import { GLTFLoader } from 'three-stdlib'
-import { useLoader } from '@react-three/fiber';
-import * as THREE from 'three';
 
-function HeartModel() {
-  const gltf = useLoader(GLTFLoader, 'heart.gltf'); // Replace with your model's path
-    const heartRef = useRef<THREE.Group>();
+export function Loading() {
+    return (
+        <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+            <h1>Loading...</h1>
+        </div>
+    );
+}
 
-    useFrame((state, delta) => {
-        // Animate the scale to simulate beating
-
-        const scale = 1 + Math.sin(state.clock.getElapsedTime() * 5) * 0.1; // Adjust speed (5) and intensity (0.1)
-        if (heartRef.current !== undefined) {
-            heartRef.current.rotation.y += 0.01;
-            heartRef.current.scale.set(scale, scale, scale);
-        }
-    });
-  return <primitive ref={heartRef} object={gltf.scene} scale={1.3} />;
+export function ContactLink() {
+    return (
+        <div style={{position: 'absolute', width: '100%', height: '100%',top:0,display:"flex",flexDirection:"column", justifyContent:'end', alignItems:"center"}}>
+            <h1 style={{color: 'black', fontSize: '1.5em'}}>Made with ❤️ by Bastien CANTET</h1>
+            <Link href="" style={{
+                //button like style
+                padding: '10px 20px',
+                backgroundColor: 'black',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '5px',
+                marginTop: '10px',
+                display: 'inline-block',
+                marginBottom: '10px',
+            }}>My Github</Link>
+        </div>
+    )
 }
 
 export default function HeartScene() {
-  return (
-      <Canvas  style={{ height: '100vh', width: '100vw' }}>
-        <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[10, 10, 5]} intensity={1} />
-          <HeartModel />
-          <OrbitControls />
-          <Environment preset="sunset" />
-        </Suspense>
-      </Canvas>
-  );
+    return (
+            <Suspense fallback={<Loading/>}>
+                <SceneComponents/>
+                <ContactLink/>
+            </Suspense>
+    );
 }
