@@ -2,7 +2,7 @@
 
 import React, {useRef} from 'react';
 import {Canvas, useFrame} from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
+import {OrbitControls, Environment, TrackballControls} from '@react-three/drei';
 import { GLTFLoader } from 'three-stdlib'
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -31,7 +31,10 @@ export default function SceneComponents() {
                 <directionalLight position={[10, 10, 5]} intensity={1}/>
                 <pointLight position={[-10, -10, -10]} intensity={3} color="green"/>
                 <HeartModel/>
-                <OrbitControls/>
+                <TrackballControls
+                    noPan
+                    dynamicDampingFactor={0.04}
+                />
                 <Environment preset="sunset"/>
             </Canvas>
         </>
