@@ -6,7 +6,7 @@ export function ContactLink() {
         <div className={"w-screen sm:left-1/2 sm:-translate-x-1/2 sm"} style={{position: 'absolute', bottom: 0, display: "flex",
             flexDirection: "column", justifyContent: 'end', alignItems: "center"
         }}>
-            <div className={"card w-screen sm:w-auto"}>
+            <div className={"card  w-screen sm:w-auto sm:mb-5"}>
                 <h1
                     className={"sm:text-2xl opacity-90"} style={{color: "lightgrey"}}>Made with ❤️ by Bastien CANTET</h1>
                 <Link className={"text-xs sm:text-base"} href={"https://github.com/bastiencantet"} style={{
