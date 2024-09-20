@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Love from Bastien CANTET ❤️",
   description: "A simple heart animation to show my love",
+  icons: [
 };
 
 export default function RootLayout({
