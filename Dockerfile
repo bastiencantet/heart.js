@@ -1,4 +1,5 @@
-FROM node:23-alpine3.19 AS build
+FROM node:23-alpine3.19 AS base
+FROM base AS deps
 RUN apk add --no-cache libc6-compat
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
