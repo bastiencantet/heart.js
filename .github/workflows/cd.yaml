@@ -66,3 +66,19 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/heart:latest
             ${{ secrets.DOCKER_USERNAME }}/heart:${{ steps.version.outputs.VERSION }}
+
+  kubernetes-deployment-restart:
+    name: Kubernetes Deployment Restart
+    runs-on: ubuntu-latest
+    needs:
+      - build-and-push-image
+    steps:
+      - name: Setup Kubectl
+        uses: tale/kubectl-action@v1
+        with:
+          base64-kube-config: ${{ secrets.KUBE_CONFIG }}
+
+      - name: Restart Kubernetes Deployment
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: |
+          kubectl rollout restart deployment -l app=heart 
