@@ -2,7 +2,7 @@ import React from "react";
 
 export  function Loading() {
     return (
-        <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
+        <div style={{width: "100vw", height: "100vh", transform: 'translate(-50%, -50%)'}}>
             <h1 style={{
                 color: 'lightgrey',
                 fontSize: '2em',

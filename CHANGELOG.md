@@ -1,2 +1,2 @@
 # What's new ?
-- [x] New CD
+- [x] Lot Loading Optimization

@@ -1,12 +1,17 @@
-import React  from "react";
+import React, {Suspense} from "react";
 import {ContactLink} from "@/app/components/ContactLink";
 import SceneComponents from "@/app/components/client/Scene";
+import {Loading} from "@/app/components/loading";
 
 
 export default function HeartScene() {
     return (
         <>
-            <SceneComponents/>
+            <div className='w-screen h-screen'>
+            <Suspense fallback={<Loading/>}>
+                <SceneComponents/>
+            </Suspense>
+            </div>
             <ContactLink/>
         </>
     );
