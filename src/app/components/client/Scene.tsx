@@ -29,17 +29,13 @@ export default function SceneComponents() {
     return (
         <Canvas style={{ height: '100vh', width: '100vw' }}>
             <ambientLight intensity={0.5} />
-            <Suspense fallback={null}>
-                <directionalLight position={[10, 10, 5]} intensity={1} />
-                <pointLight position={[-10, -10, -10]} intensity={3} color="green" />
-            </Suspense>
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+            <pointLight position={[-10, -10, -10]} intensity={3} color="green" />
             <Suspense fallback={null}>
                 <HeartModel />
             </Suspense>
-            <Suspense fallback={null}>
             <TrackballControls dynamicDampingFactor={0.04} />
             <Environment preset="sunset" />
-            </Suspense>
         </Canvas>
     );
 }
