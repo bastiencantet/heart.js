@@ -2,12 +2,16 @@
 
 import React, {useRef} from 'react';
 import {Canvas, useFrame} from '@react-three/fiber';
-import { GLTFLoader } from 'three-stdlib'
+import {DRACOLoader, GLTFLoader} from 'three-stdlib'
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 
 export function HeartModel() {
-    const gltf = useLoader(GLTFLoader, 'heart.gltf');
+    const gltf = useLoader(GLTFLoader, 'heart.gltf', (loader) => {
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath('/draco/');
+        loader.setDRACOLoader(dracoLoader);
+    });
     const heartRef = useRef<THREE.Group>();
 
     useFrame((state, delta) => {
