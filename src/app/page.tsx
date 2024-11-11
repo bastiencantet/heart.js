@@ -8,7 +8,9 @@ export default function HeartScene() {
     return (
         <>
             <div className='w-screen h-screen'>
-                <SceneComponents/>
+                <Suspense fallback={null}>
+                    <SceneComponents/>
+                </Suspense>
             </div>
             <ContactLink/>
         </>
