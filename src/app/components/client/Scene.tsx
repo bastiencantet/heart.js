@@ -5,7 +5,6 @@ import { Environment, TrackballControls } from "@react-three/drei";
 import React, {Suspense, useEffect, useState} from "react";
 import { HeartModel } from "@/app/components/client/heart/HeartModel";
 import { isWebGLAvailable } from "three-stdlib";
-import {Loading} from "@/app/components/loading";
 
 export default function SceneComponents() {
     const [isClient, setIsClient] = useState(false);

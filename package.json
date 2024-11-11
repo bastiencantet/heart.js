@@ -1,6 +1,6 @@
 {
   "name": "threejs-heart-next",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,7 +12,7 @@
     "@react-three/drei": "^9.111.2",
     "@react-three/fiber": "^8.17.5",
     "cssnano": "^7.0.6",
-    "next": "14.2.5",
+    "next": "14.2.17",
     "react": "^18",
     "react-dom": "^18",
     "three": "^0.167.1",
